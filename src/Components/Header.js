@@ -1,12 +1,11 @@
 import React from 'react'
 
-function Header(){
+function Header(props){
+    
+
     return(
         <header className='App-header'>
-        Chat App
-            <div>
-                
-            </div>
+            
         </header>
     )
 }

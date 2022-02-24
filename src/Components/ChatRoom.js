@@ -1,9 +1,10 @@
-import React from "react";
+import React from "react"
 
-function ChatRoom(){
+function ChatRoom(props){
+
     return(
         <div>
-            
+
         </div>
     )
 }

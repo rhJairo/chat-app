@@ -5,11 +5,10 @@ import SignIn from './Components/SignIn'
 import Header from './Components/Header'
 
 import { initializeApp } from 'firebase/app'
-import { getFirestore, collection, query, orderBy, limit, serverTimestamp, addDoc } from 'firebase/firestore'
-import { getAuth, getRedirectResult, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
+import { getFirestore } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
 //hooks
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 
 const firebaseConfig = {
@@ -31,9 +30,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header auth={auth}/>
       <section>
-        { user ? <ChatRoom /> : <SignIn className='sign-in' /> }
+        { user ? <ChatRoom auth={auth} db={db} /> : <SignIn className='sign-in' auth={auth}  /> }
       </section>
     </div>
   );
