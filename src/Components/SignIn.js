@@ -3,7 +3,7 @@ import { GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
 
 function SignIn(props){
 
-    function SignIn() {
+    function LoginButton() {
         const signInWithGoogle = () => {
           const provider = new GoogleAuthProvider()
           // signInWithRedirect(auth, provider)
@@ -23,7 +23,7 @@ function SignIn(props){
 
     return(
         <div>
-            <SignIn />
+            <LoginButton />
         </div>
     )
 }

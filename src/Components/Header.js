@@ -3,7 +3,7 @@ import React from 'react'
 function Header(props){
     function SignOut(){
         return props.auth.currentUser && (
-          <button onClick={() => auth.signOut()}>Sign Out</button>
+          <button onClick={() => props.auth.signOut()}>Sign Out</button>
         )
     }
 
