@@ -9,6 +9,8 @@ function ChatRoom(props){
     const {auth, db} = props
 
     function Messages(){
+        const autoScroll = React.useRef()
+
         const messageRef = collection(db, 'messages')
         const q = query(messageRef, orderBy('createdAt'), limit(25))
       
@@ -26,11 +28,15 @@ function ChatRoom(props){
           })
       
           setFormValue('')
+          autoScroll.current.scrollIntoView({behavior: 'smooth'})
         }
         return(
           <div>
             <main className='container--messages'>
+
               {messages && messages.map(msg => <ChatMessage key={nanoid()} message={msg} />)}
+              <div ref={autoScroll} ></div>
+
             </main>
             <form onSubmit={sendMessage}>
               <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
