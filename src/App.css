@@ -69,7 +69,7 @@ main::-webkit-scrollbar-thumb {
   align-self: flex-end;
 }
 .received p {
-  background:linear-gradient(#6fe66f, #26a026);
+  background:linear-gradient(#62ca62, #1e801e);
   color: rgb(255, 255, 255);
 }
 

@@ -40,7 +40,7 @@ function ChatRoom(props){
             </main>
             <form onSubmit={sendMessage}>
               <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-              <button className='btn' type='submit'>✉️</button>
+              <button className='btn' type='submit'><span role='img'>✉️</span></button>
             </form>
           </div>
         )
